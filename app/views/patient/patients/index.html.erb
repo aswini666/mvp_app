@@ -30,6 +30,7 @@
       <th>Doctor Last Name</th>
       <th>Doctor Email</th>
       <th>Appointment Date time</th>
+      <th>Status</th>
     </tr>
   </thead>
   <tbody>
@@ -39,6 +40,13 @@
         <td><%= appoint.doctor.last_name %></td>
         <td><%= appoint.doctor.email %></td>
         <td><%= appoint.appointment_date %></td>
+        <% if appoint.status == true %>
+          <td>"Appointment Accepted"</td>
+        <% elsif appoint.status == false %>
+         <td>"Appointment Rejected"</td>
+        <% else %>
+        <td>"Pending"</td>
+        <% end %>
     <% end %>
   </tbody>
 </table>

@@ -15,7 +15,13 @@
     <% @appointment.each do |appointment| %>
       <tr>
         <td><%= appointment.patient.first_name %></td>
-        <td><%= appointment.status == true ? " Appointment Accepted" : " Appointment Rejected" %></td>
+        <% if appointment.status == true %>
+          <td>"Appointment Accepted"</td>
+        <% elsif appointment.status == false %>
+         <td>"Appointment Rejected"</td>
+        <% else %>
+        <td>"Pending"</td>
+        <% end %>
         <td><%= appointment.appointment_date %></td>
         <% if appointment.status == false %>
            <td><%= link_to "<button>Accept</button>".html_safe, doctor_appointment_url(:appointment => appointment, :status => true), method: :post %></td>
