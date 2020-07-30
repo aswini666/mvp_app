@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  host: localhost
+  #database:
+  username: postgres_admin
+  password: postgresadmin
+
+development:
+  <<: *default
+  database: mvp_dev
+
+test:
+  <<: *default
+  database: mvp_test
+
+production:
+  <<: *default
+  database: mvp_pro

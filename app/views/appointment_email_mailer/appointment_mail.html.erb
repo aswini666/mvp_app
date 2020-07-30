@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <h3><%= DateTime.now %>
+  <h1>Appointment Letter</h1>
+  <h3>Dear <%= @appointment.patient.first_name %> <%= @appointment.patient.last_name %>
+  <p> Our records indicate that you are due for an application for <%=  @appointment.patient.email %> on
+  <%= @appointment.appointment_date %> </p>
+  <td><%= link_to "Accept", doctor_appointment_url(:appointment => @appointment, :status => "true"), method: :post %></td>
+  <td><%= link_to "Reject", doctor_appointment_url( :appointment => @appointment, :status => "true"), method: :post %></td>
+  </body>
+</html>
