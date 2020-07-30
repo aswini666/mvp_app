@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
+#This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+#Things you may want to cover:
 
-* Ruby version
+* Ruby version :- 2.6.3
 
-* System dependencies
+* Rails version :- 6.0.3.2
 
-* Configuration
+* Database creation :- 'pg'
 
-* Database creation
+* Database initialization :-  rake db:create, rake db:migrate, rake db:seed
 
-* Database initialization
+* Devise for Authentication
 
-* How to run the test suite
+* Pundit for Authorization
 
-* Services (job queues, cache servers, search engines, etc.)
+* Patients can book appointment. When they book appointment an notification will be send  to
+  particular Doctor.
 
-* Deployment instructions
+* Doctors can see the appointment and they can either accept or reject that.
 
-* ...
+* Patient can see the status of the appointment.
